@@ -8,7 +8,8 @@
 		"xml2js": "*"
 	},
 	"repository": {
-		"type":"git"
+		"type":"git",
+		"url": "https://github.com/elliotstokes/gpx-parse.git"
 	},
 	"devDependencies": {
 		"nodeunit": "*",
