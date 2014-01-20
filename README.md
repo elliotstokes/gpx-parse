@@ -1,7 +1,7 @@
 gpx-parse
 ========
 
-A library for parsing gpx data.
+A library for parsing gpx data. Still in its infancy. Only supports routes and waypoints currently. Currently working on finishing off the rest of the spec.
 
 #Usage
 
