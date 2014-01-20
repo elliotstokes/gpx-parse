@@ -1,0 +1,21 @@
+{
+	"name": "gpx-parse",
+	"author": "Elliot Stokes",
+	"description": "GPX parser for Node.js",
+	"version": "0.0.1",
+	"keywords": ["gpx"],
+	"dependencies": {
+		"xml2js": "*"
+	},
+	"repository": {
+		"type":"git"
+	},
+	"devDependencies": {
+		"nodeunit": "*",
+		"sandboxed-module": "*"
+	},
+	"scripts" : {
+		"test" : "node_modules/.bin/nodeunit tests/"
+	}
+
+}
