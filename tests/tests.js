@@ -64,6 +64,23 @@ var GpxResult = require("../lib/gpxResult"),
         '<type><![CDATA[Dot]]></type>',
         '</rtept>',
         '</rte>',
+        '<trk>',
+        '<name>Example Track</name>',
+        '<trkseg>',
+        '<trkpt lat="47.644548" lon="-122.326897">',
+        '<ele>4.46</ele>',
+        '<time>2009-10-17T18:37:26Z</time>',
+        '</trkpt>',
+        '<trkpt lat="47.644548" lon="-122.326897">',
+        '<ele>4.94</ele>',
+        '<time>2009-10-17T18:37:31Z</time>',
+        '</trkpt>',
+        '<trkpt lat="47.644548" lon="-122.326897">',
+        '<ele>6.87</ele>',
+        '<time>2009-10-17T18:37:34Z</time>',
+        '</trkpt>',
+        '</trkseg>',
+        '</trk>',
         '</gpx>'
     ].join('\n');
 
@@ -111,7 +128,7 @@ module.exports = {
     },
 
     "Test that the gpxExtent can be initialized": function(test) {
-        var gpxExtent = new GpxExtent(1,2,3,4);
+        var gpxExtent = new GpxExtent(1, 2, 3, 4);
 
         test.equal(gpxExtent.minx, 1);
         test.equal(gpxExtent.miny, 2);
@@ -133,7 +150,9 @@ module.exports = {
             test.equal(result.routes[0].length, 4);
             test.equal(result.routes[0][0].x, 42.43095);
             test.equal(result.routes[0][0].y, -71.107628);
-
+            test.equal(result.tracks.length, 1);
+            test.equal(result.tracks[0].segments.length, 1);
+            test.equal(result.tracks[0].segments[0].length, 3);
             test.done();
         });
 
@@ -156,7 +175,9 @@ module.exports = {
             test.equal(result.routes[0].length, 4);
             test.equal(result.routes[0][0].x, 42.43095);
             test.equal(result.routes[0][0].y, -71.107628);
-
+            test.equal(result.tracks.length, 1);
+            test.equal(result.tracks[0].segments.length, 1);
+            test.equal(result.tracks[0].segments[0].length, 3);
             test.done();
         });
 
