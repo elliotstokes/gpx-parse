@@ -1,4 +1,4 @@
-gpx-parse [![NPM Version](https://badge.fury.io/js/gpx-parse.png)(https://badge.fury.io/js/gpx-parse)
+gpx-parse [![NPM Version](https://badge.fury.io/js/gpx-parse.png)](https://badge.fury.io/js/gpx-parse)
 ========
 
 A library for parsing gpx data. Still in its infancy. Only supports routes and waypoints currently. Currently working on finishing off the rest of the spec.
