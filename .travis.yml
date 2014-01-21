@@ -8,3 +8,6 @@ deploy:
     secure: hkBxq62jd+ta+QuIX9ALpFZyNwsMtlReMzVbb/iejVvjWRY7lgjJBc6vdHiKroT942oJUSSmwhHXau/ndkKGS5e84pSSogjZW3z+jXlxh1RDxzu+iw1YsnvNM8pWj33vIModTjKEGielLnwxjVYaw1XXRTS5X3MwY8s8jdVcSbk=
   email: elliot.stokes@gmail.com
   provider: npm
+  on:
+    tags: true
+    node: 0.10
