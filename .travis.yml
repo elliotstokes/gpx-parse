@@ -5,4 +5,6 @@ node_js:
 - '0.8'
 deploy:
   api_key:
-    secure: KcIwlO9ijPnItJEbgVwvDju3YuAYdRAVetPggTmxYUcObweRo7OrciytXm0NwU8YmcldT/9vf4X8LRSPw2ECifpivPfwO8hi8HZ61wcNfKViHqNiYGHXEsxCfn1EJHH4mTO0X6q7O2mbeta8KXl8vT6AITPM88bDV2Wb5ua6A04=
+    secure: hkBxq62jd+ta+QuIX9ALpFZyNwsMtlReMzVbb/iejVvjWRY7lgjJBc6vdHiKroT942oJUSSmwhHXau/ndkKGS5e84pSSogjZW3z+jXlxh1RDxzu+iw1YsnvNM8pWj33vIModTjKEGielLnwxjVYaw1XXRTS5X3MwY8s8jdVcSbk=
+  email: elliot.stokes@gmail.com
+  provider: npm
