@@ -5,7 +5,7 @@ A library for parsing gpx data. Still in its infancy. Only supports routes and w
 
 #Usage
 
-npm install gpx-parse
+$ npm install gpx-parse
 
 ```javascript
 var gpxParse = require("gpx-parse");
