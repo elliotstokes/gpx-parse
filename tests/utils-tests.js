@@ -1,0 +1,17 @@
+var geomUtils = require("../lib/geomUtils");
+
+module.exports = {
+    setUp: function(callback) {
+        callback();
+    },
+    tearDown: function(callback) {
+        // clean up
+        callback();
+    },
+
+    "Should calculate the distance between two points": function(test) {
+        var distance = geomUtils.calculateDistance(4.367,5.6745,-40.4556,39.34345);
+        test.equal(distance,3756.539882895099);
+        test.done();
+    }
+}

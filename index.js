@@ -3,21 +3,36 @@ var xml2js = require("xml2js"),
 	GpxResult = require('./lib/gpxResult'),
 	GpxExtent = require('./lib/gpxExtent'),
 	GpxPoint = require('./lib/gpxPoint'),
-	GpxTrack = require('./lib/gpxTrack');
+	GpxTrack = require('./lib/gpxTrack'),
+	GpxMetaData = require('./lib/gpxMetaData');
 
+var _getWayPoints = function(gpxWaypoints) {
+
+	var waypoints = [],
+		gpxWaypoint= null;
+		point = null;
+
+	//grab waypoints
+	for (var i = 0, il = gpxWaypoints.length; i < il; i++) {
+		gpxWaypoint = gpxWaypoints[i];
+		point = new GpxPoint(gpxWaypoint.$.lat, gpxWaypoint.$.lon, gpxWaypoint.ele);
+		waypoints.push(point);
+	}
+
+	return waypoints;
+}
 
 
 var _ParseV10 = function(gpx) {
 
 	var routes = [],
 		extent = null,
-		waypoints = [],
+		waypoints = null,
+		metadata = null,
 		tracks = [];
-	//grab waypoints
-	for (var i = 0, il = gpx.wpt.length; i < il; i++) {
-		waypoints.push(new GpxPoint(gpx.wpt[i].$.lat, gpx.wpt[i].$.lon));
 
-	}
+	waypoints = _getWayPoints(gpx.wpt);
+
 
 	//grab routes
 	for (var i = 0, il = gpx.rte.length; i < il; i++) {
@@ -37,7 +52,9 @@ var _ParseV10 = function(gpx) {
 		for (var j = 0, jl = gpx.trk[i].trkseg.length; j < jl; j++) {
 			var trackSegement = [];
 			for (var k = 0, kl = gpx.trk[i].trkseg[j].trkpt.length; k < kl; k++) {
-				trackSegement.push(new GpxPoint(gpx.trk[i].trkseg[j].trkpt[k].$.lat, gpx.trk[i].trkseg[j].trkpt[k].$.lon));
+				var trackPoint = gpx.trk[i].trkseg[j].trkpt[k];
+				var elevation = trackPoint.ele;
+				trackSegement.push(new GpxPoint(trackPoint.$.lat, trackPoint.$.lon, elevation));
 			}
 
 			trackSegments.push(trackSegement);
@@ -48,12 +65,13 @@ var _ParseV10 = function(gpx) {
 
 
 	extent = new GpxExtent();
-
-	return new GpxResult(gpx.$.creator, gpx.time, extent, waypoints, routes, tracks);
+	metaData = new GpxMetaData(gpx.$.creator, gpx.time, extent);
+	return new GpxResult(metaData, waypoints, routes, tracks);
 };
 
 var _ParseV11 = function(gpxData) {
-
+	var metadata = new GpxMetadata(gpx.$.creator, gpx.metadata.time);
+	return new GpxResult(metadata);
 };
 
 /**
@@ -75,11 +93,12 @@ exports.parseGpx = function(gpxString, callback) {
 
 		version = data.gpx.$.version;
 		if (version === "1.0") {
-			gpxResult =  _ParseV10(data.gpx);
+			gpxResult = _ParseV10(data.gpx);
 		} else if (version === "1.1") {
 			gpxResult = null;
 		} else {
-			callback(new Error("version not supported"));
+			callback(new Error("version not supported"), null);
+			return;
 		}
 
 		callback(null, gpxResult);

@@ -1,9 +1,9 @@
 var SandboxedModule = require("sandboxed-module"),
-  successfulGpx = ['<?xml version="1.0" encoding="UTF-8" standalone="no" ?>',
+  errorGpx = ['<?xml version="1.0" encoding="UTF-8" standalone="no" ?>',
     '<gpx xmlns="http://www.topografix.com/GPX/1/1"',
     'xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" ',
     'xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" ',
-    'creator="Oregon 400t" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ',
+    'creator="Oregon 400t" version="1.01" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ',
     'xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd ',
     'http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensionsv3.xsd ',
     'http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">',
@@ -53,24 +53,14 @@ module.exports = {
     callback();
   },
 
-
-
-  "Test that valid gpx string is parsed successfully": function(test) {
-    this.gpxParse.parseGpx(successfulGpx, function(error, result) {
+  "Should error returned when invalid gpx version": function(test) {
+    this.gpxParse.parseGpx(errorGpx, function(error, result) {
+      //test.notEqual(error, null);
       test.done();
     });
-
   },
-
-  "Test that valid gpx file is parsed successfully": function(test) {
-
-    this.fsMock.open = function(path, flags, callback) {
-      callback(null, successfulGpx);
-    }
-
-    this.gpxParse.parseGpxFromFile("/path/to/gpxFile.gpx", function(error, result) {
-      test.done();
-    });
-
+  
+  "Should error gracefully with malformed gpx" : function(test) {
+    test.done();
   }
 };

@@ -109,8 +109,8 @@ module.exports = {
         this.gpxParse.parseGpx(successfulGpx, function(error, result) {
 
             test.equal(error, null);
-            test.equal(result.creator, "ExpertGPS 1.1 - http://www.topografix.com");
-            test.equal(result.time, "2002-02-27T17:18:33Z");
+            test.equal(result.metadata.creator, "ExpertGPS 1.1 - http://www.topografix.com");
+            test.equal(result.metadata.time, "2002-02-27T17:18:33Z");
             test.equal(result.waypoints.length, 2);
             test.equal(result.waypoints[0].x, 42.438878);
             test.equal(result.waypoints[1].y, -71.119689);
@@ -134,8 +134,8 @@ module.exports = {
         this.gpxParse.parseGpxFromFile("/path/to/gpxFile.gpx", function(error, result) {
 
             test.equal(error, null);
-            test.equal(result.creator, "ExpertGPS 1.1 - http://www.topografix.com");
-            test.equal(result.time, "2002-02-27T17:18:33Z");
+            test.equal(result.metadata.creator, "ExpertGPS 1.1 - http://www.topografix.com");
+            test.equal(result.metadata.time, "2002-02-27T17:18:33Z");
             test.equal(result.waypoints.length, 2);
             test.equal(result.waypoints[0].x, 42.438878);
             test.equal(result.waypoints[1].y, -71.119689);
@@ -149,13 +149,5 @@ module.exports = {
             test.done();
         });
 
-    },
-    "Test error returned when gpx is malformed": function(test) {
-        /*this.gpxParse.parseGpx(errorGpx, function(error, result) {
-            console.log("I am here and I am happy about it.")
-            test.equal(error, null);
-            test.done();
-        });*/
-        test.done();
     }
 };
