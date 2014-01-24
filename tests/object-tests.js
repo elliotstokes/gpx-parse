@@ -1,9 +1,10 @@
 var GpxResult = require("../lib/gpxResult"),
     GpxPoint = require('../lib/gpxPoint'),
     GpxExtent = require('../lib/gpxExtent'),
-    GpxMetaData = require('../lib/GpxMetaData');
+    GpxMetaData = require('../lib/gpxMetaData');
 
 module.exports = {
+    
     setUp: function(callback) {
         callback();
     },
