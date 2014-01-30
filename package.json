@@ -24,6 +24,6 @@
   },
   "scripts": {
     "test": "node_modules/.bin/nodeunit tests/",
-    "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests"
+    "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests | coveralls"
   }
 }
