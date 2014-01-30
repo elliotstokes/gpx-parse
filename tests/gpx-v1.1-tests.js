@@ -1,4 +1,4 @@
-var SandboxedModule = require("sandboxed-module"),
+var gpxParse = require("../"),
   successfulGpx = ['<?xml version="1.0" encoding="UTF-8" standalone="no" ?>',
     '<gpx xmlns="http://www.topografix.com/GPX/1/1"',
     'xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" ',
@@ -36,14 +36,7 @@ var SandboxedModule = require("sandboxed-module"),
 module.exports = {
   setUp: function(callback) {
 
-    //mock the file system
-    this.fsMock = {};
-    this.gpxParse = SandboxedModule.require("../", {
-      "requires": {
-        "fs": this.fsMock
-      }
-
-    });
+    //mock the file syste
 
     callback();
   },
@@ -56,10 +49,18 @@ module.exports = {
 
 
   "Test that valid gpx string is parsed successfully": function(test) {
-    this.gpxParse.parseGpx(successfulGpx, function(error, result) {
+    gpxParse.parseGpx(successfulGpx, function(error, result) {
       test.done();
     });
 
+  },
+
+  "Should return an error when file does not exist" : function(test) {
+    gpxParse.parseGpxFromFile("/path/to/incorrect/gpxFile.gpx", function(error, result) {
+      test.notEqual(null, error);
+      test.equal(error.message, "ENOENT, open '/path/to/incorrect/gpxFile.gpx'");
+      test.done();
+    });
   },
 
   "Test that valid gpx file is parsed successfully": function(test) {
