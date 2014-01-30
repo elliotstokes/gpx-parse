@@ -18,9 +18,12 @@
   },
   "devDependencies": {
     "nodeunit": "*",
-    "sandboxed-module": "*"
+    "sandboxed-module": "*",
+    "jscoverage": "*",
+    "coveralls": "*"
   },
   "scripts": {
-    "test": "node_modules/.bin/nodeunit tests/"
+    "test": "node_modules/.bin/nodeunit tests/",
+    "coveralls": "jscoverage lib && GPXPARSE_COVERAGE=1 nodeunit --reporter=lcov tests"
   }
 }

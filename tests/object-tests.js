@@ -1,3 +1,4 @@
+
 var GpxResult = require("../lib/gpxResult"),
     GpxPoint = require('../lib/gpxPoint'),
     GpxExtent = require('../lib/gpxExtent'),

@@ -64,13 +64,13 @@ module.exports = {
 
   "Test that valid gpx file is parsed successfully": function(test) {
 
-    this.fsMock.open = function(path, flags, callback) {
-      callback(null, successfulGpx);
-    }
+    //this.fsMock.open = function(path, flags, callback) {
+    //  callback(null, successfulGpx);
+    //}
 
-    this.gpxParse.parseGpxFromFile("/path/to/gpxFile.gpx", function(error, result) {
+    //this.gpxParse.parseGpxFromFile("/path/to/gpxFile.gpx", function(error, result) {
       test.done();
-    });
+    //});
 
   }
 };
