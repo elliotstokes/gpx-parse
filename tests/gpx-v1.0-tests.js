@@ -1,4 +1,4 @@
-var SandboxedModule = require("sandboxed-module"),
+var gpxParse = require("../"),
     errorGpx = "<gpx><aa></gpx>",
     successfulGpx = ['<?xml version="1.0"?>',
         '<gpx version="1.0"',
@@ -86,16 +86,6 @@ var SandboxedModule = require("sandboxed-module"),
 
 module.exports = {
     setUp: function(callback) {
-
-        //mock the file system
-        this.fsMock = {};
-        this.gpxParse = SandboxedModule.require("../", {
-            "requires": {
-                "fs": this.fsMock
-            }
-
-        });
-
         callback();
     },
     tearDown: function(callback) {
@@ -106,7 +96,7 @@ module.exports = {
 
 
     "Test that valid gpx string is parsed successfully": function(test) {
-        this.gpxParse.parseGpx(successfulGpx, function(error, result) {
+        gpxParse.parseGpx(successfulGpx, function(error, result) {
 
             test.equal(error, null);
             test.equal(result.metadata.creator, "ExpertGPS 1.1 - http://www.topografix.com");

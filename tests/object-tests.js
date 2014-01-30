@@ -1,8 +1,9 @@
 
-var GpxResult = require("../lib/gpxResult"),
-    GpxPoint = require('../lib/gpxPoint'),
-    GpxExtent = require('../lib/gpxExtent'),
-    GpxMetaData = require('../lib/gpxMetaData');
+var gpxParse = require("../"),
+    GpxResult = gpxParse.GpxResult,
+    GpxPoint = gpxParse.GpxPoint,
+    GpxExtent = gpxParse.GpxExtent,
+    GpxMetaData = gpxParse.GpxMetaData;
 
 module.exports = {
     
