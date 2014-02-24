@@ -18,7 +18,7 @@ gpxParse.parseGpxFromFile("/path/to/gpxFile", function(error, data) {
 });
 
 //or from string
-gpxParse.parseGpx("&lt;gpx&gt;&lt;/gpx&gt;", function(error, data) {
+gpxParse.parseGpx("<gpx></gpx>", function(error, data) {
 	//do stuff
 });
 
