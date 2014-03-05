@@ -14,5 +14,10 @@ module.exports = {
         var distance = geomUtils.calculateDistance(4.367, 5.6745, -40.4556, 39.34345);
         test.equal(distance, 3756.539882895099);
         test.done();
+    },
+
+    "Should calculate the midpoint between two points" : function(test) {
+        geomUtils.calculateMidpoint(4.367, 5.6745, -40.4556, 39.34345);
+        test.done();
     }
 }
