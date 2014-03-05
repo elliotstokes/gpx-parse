@@ -1,4 +1,5 @@
-var geomUtils = require("../lib/geomUtils");
+var gpxParse = require("../"),
+    geomUtils = gpxParse.utils;
 
 module.exports = {
     setUp: function(callback) {
@@ -10,8 +11,8 @@ module.exports = {
     },
 
     "Should calculate the distance between two points": function(test) {
-        var distance = geomUtils.calculateDistance(4.367,5.6745,-40.4556,39.34345);
-        test.equal(distance,3756.539882895099);
+        var distance = geomUtils.calculateDistance(4.367, 5.6745, -40.4556, 39.34345);
+        test.equal(distance, 3756.539882895099);
         test.done();
     }
 }
