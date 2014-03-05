@@ -1,12 +1,12 @@
-
 var gpxParse = require("../"),
     GpxResult = gpxParse.GpxResult,
-    GpxPoint = gpxParse.GpxPoint,
+    GpxWaypoint = gpxParse.GpxWaypoint,
     GpxExtent = gpxParse.GpxExtent,
-    GpxMetaData = gpxParse.GpxMetaData;
+    GpxMetaData = gpxParse.GpxMetaData,
+    GpxRoute = gpxParse.GpxRoute;
 
 module.exports = {
-    
+
     setUp: function(callback) {
         callback();
     },
@@ -53,9 +53,19 @@ module.exports = {
         test.done();
     },
 
-    "Test that the gpxPoint can be initialized": function(test) {
-        var gpxPoint = new GpxPoint();
+    "Test that the gpxWaypoint can be initialized": function(test) {
+        var gpxPoint = new GpxWaypoint(1, 2, 3);
+        test.equal(gpxPoint.lat, 1);
+        test.equal(gpxPoint.lon, 2);
+        test.equal(gpxPoint.elevation, 3);
+        test.done();
+    },
 
+    "Test that the gpxRoute can be initialized" : function(test) {
+        var gpxRoute = new GpxRoute("name", "cmt", "description",[new GpxWaypoint(1,2),new GpxWaypoint(3,4)]);
+        test.equal(gpxRoute.name, "name");
+        test.equal(gpxRoute.cmt, "cmt");
+        test.equal(gpxRoute.description, "description");
         test.done();
     },
 

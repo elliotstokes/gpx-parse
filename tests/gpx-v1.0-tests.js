@@ -102,12 +102,12 @@ module.exports = {
             test.equal(result.metadata.creator, "ExpertGPS 1.1 - http://www.topografix.com");
             test.equal(result.metadata.time, "2002-02-27T17:18:33Z");
             test.equal(result.waypoints.length, 2);
-            test.equal(result.waypoints[0].x, 42.438878);
-            test.equal(result.waypoints[1].y, -71.119689);
+            test.equal(result.waypoints[0].lat, 42.438878);
+            test.equal(result.waypoints[1].lon, -71.119689);
             test.equal(result.routes.length, 1);
-            test.equal(result.routes[0].length, 4);
-            test.equal(result.routes[0][0].x, 42.43095);
-            test.equal(result.routes[0][0].y, -71.107628);
+            test.equal(result.routes[0].points.length, 4);
+            test.equal(result.routes[0].point(0).lat, 42.43095);
+            test.equal(result.routes[0].point(0).lon, -71.107628);
             test.equal(result.tracks.length, 1);
             test.equal(result.tracks[0].segments.length, 1);
             test.equal(result.tracks[0].segments[0].length, 3);
