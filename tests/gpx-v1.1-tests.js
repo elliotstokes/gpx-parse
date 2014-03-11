@@ -50,6 +50,8 @@ module.exports = {
 
   "Test that valid gpx string is parsed successfully": function(test) {
     gpxParse.parseGpx(successfulGpx, function(error, result) {
+      test.equal(result.metadata.creator, "Oregon 400t");
+      test.equal(result.metadata.time, "2009-10-17T22:58:43Z");
       test.done();
     });
 
