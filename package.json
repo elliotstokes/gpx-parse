@@ -2,7 +2,7 @@
   "name": "gpx-parse",
   "author": "Elliot Stokes",
   "description": "GPX parser for Node.js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "keywords": [
     "gpx",
     "parser",
@@ -25,6 +25,6 @@
   "scripts": {
     "test": "node_modules/.bin/nodeunit tests/",
     "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests | coveralls",
-    "lcov" : "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests"
+    "lcov": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests"
   }
 }
