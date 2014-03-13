@@ -35,6 +35,29 @@
        <h3>Gpx Parse</h3>
 
        <p>Gpx parse is a library for parsing gpx files in node. It is intended to have a small, easy to use api with some easy to use objects.</p>
+       
+       <p>To use the library the easiest way to install it is with npm.
+       
+
+<pre>
+$ npm install gpx-parse
+</pre>
+
+<h3>Usage</h3>
+
+<pre>
+var gpxParse = require("gpx-parse");
+
+//from file
+gpxParse.parseGpxFromFile("/path/to/gpxFile", function(error, data) {
+    //do stuff
+});
+
+//or from string
+gpxParse.parseGpx("<gpx></gpx>", function(error, data) {
+    //do stuff
+});
+</pre>
 
        <h3>Full documentation</h3>
 
