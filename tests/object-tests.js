@@ -51,6 +51,7 @@ module.exports = {
         test.equal(metadata.copyright, "copyright");
         test.equal(metadata.links.length, 1);
         test.equal(metadata.links[0], "http://alink.com");
+        test.equal(metadata.keywords, "keywords");
         test.done();
     },
 
