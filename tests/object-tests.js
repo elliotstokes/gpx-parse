@@ -55,10 +55,14 @@ module.exports = {
     },
 
     "Test that the gpxWaypoint can be initialized": function(test) {
-        var gpxPoint = new GpxWaypoint(1, 2, 3);
+        var gpxPoint = new GpxWaypoint(1, 2, 3, "2002-02-27T17:18:33Z",1,1,"name","cmt", "description");
         test.equal(gpxPoint.lat, 1);
         test.equal(gpxPoint.lon, 2);
         test.equal(gpxPoint.elevation, 3);
+        test.equal(gpxPoint.time.getTime(),1014830313000 );
+        test.equal(gpxPoint.name, "name");
+        test.equal(gpxPoint.cmt, "cmt");
+        test.equal(gpxPoint.desc, "description");
         test.done();
     },
 
