@@ -55,12 +55,16 @@ module.exports = {
 
   "Should error returned when invalid gpx version": function(test) {
     this.gpxParse.parseGpx(errorGpx, function(error, result) {
-      //test.notEqual(error, null);
+      test.notEqual(error, null);
+      test.equal(error.message, "version not supported");
       test.done();
     });
   },
   
   "Should error gracefully with malformed gpx" : function(test) {
-    test.done();
+    //this.gpxParse.parseGpx("<gpx > <<", function(error, result) {
+    //  test.notEqual(error, null);
+      test.done();
+    //});
   }
 };
