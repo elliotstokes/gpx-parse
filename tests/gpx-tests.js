@@ -62,9 +62,9 @@ module.exports = {
   },
   
   "Should error gracefully with malformed gpx" : function(test) {
-    //this.gpxParse.parseGpx("<gpx > <<", function(error, result) {
-    //  test.notEqual(error, null);
+    this.gpxParse.parseGpx("<gpx > <<", function(error, result) {
+      test.notEqual(error, null);
       test.done();
-    //});
+    });
   }
 };
