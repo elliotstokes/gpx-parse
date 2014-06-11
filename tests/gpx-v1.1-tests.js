@@ -54,6 +54,7 @@ module.exports = {
       test.equal(result.metadata.time, "2009-10-17T22:58:43Z");
       test.equal(result.tracks.length, 1);
       test.equal(result.tracks[0].name, 'Example GPX Document');
+      test.equal(result.tracks[0].segments[0][0].time, new Date('2009-10-17T18:37:26Z').toString());
       test.done();
     });
 
