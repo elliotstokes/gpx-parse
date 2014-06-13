@@ -20,4 +20,4 @@ module.exports = {
         geomUtils.calculateMidpoint(4.367, 5.6745, -40.4556, 39.34345);
         test.done();
     }
-}
+};

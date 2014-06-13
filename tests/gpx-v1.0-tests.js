@@ -100,7 +100,7 @@ module.exports = {
 
             test.equal(error, null);
             test.equal(result.metadata.creator, "ExpertGPS 1.1 - http://www.topografix.com");
-            test.equal(result.metadata.time, "2002-02-27T17:18:33Z");
+            test.equal(result.metadata.time.getTime(), 1014830313000);
             test.equal(result.waypoints.length, 2);
             test.equal(result.waypoints[0].lat, 42.438878);
             test.equal(result.waypoints[1].lon, -71.119689);

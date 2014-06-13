@@ -31,7 +31,7 @@ module.exports = {
         gpxResult = new GpxResult(metadata, waypoints, routes, tracks);
 
         test.equal(gpxResult.metadata.creator, "creator");
-        test.equal(gpxResult.metadata.time, "2002-02-27T17:18:33Z");
+        test.equal(gpxResult.metadata.time.getTime(), 1014830313000);
         test.equal(gpxResult.metadata.bounds.minx, "1");
         test.done();
     },
@@ -43,7 +43,7 @@ module.exports = {
         var metadata = new GpxMetaData("creator", "2002-02-27T17:18:33Z", extent, "name", "desc", "author", "copyright", links, "keywords");
 
         test.equal(metadata.creator, "creator");
-        test.equal(metadata.time, "2002-02-27T17:18:33Z");
+        test.equal(metadata.time.getTime(), 1014830313000);
         test.equal(metadata.bounds.minx, 1);
         test.equal(metadata.name, "name");
         test.equal(metadata.description, "desc");
@@ -92,4 +92,4 @@ module.exports = {
         test.equal(gpxExtent.maxy, 4);
         test.done();
     }
-}
+};
