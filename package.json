@@ -20,7 +20,9 @@
     "nodeunit": "*",
     "sandboxed-module": "*",
     "jscoverage": "*",
-    "coveralls": "*"
+    "coveralls": "*",
+    "grunt": "^0.4.5",
+    "grunt-jsdoc": "^0.5.4"
   },
   "scripts": {
     "test": "node_modules/.bin/nodeunit tests/",
