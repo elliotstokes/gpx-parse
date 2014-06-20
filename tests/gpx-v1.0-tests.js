@@ -69,11 +69,11 @@ var gpxParse = require("../"),
         '<ele>4.46</ele>',
         '<time>2009-10-17T18:37:26Z</time>',
         '</trkpt>',
-        '<trkpt lat="47.644548" lon="-122.326897">',
+        '<trkpt lat="47.644548" lon="-122.326697">',
         '<ele>4.94</ele>',
         '<time>2009-10-17T18:37:31Z</time>',
         '</trkpt>',
-        '<trkpt lat="47.644548" lon="-122.326897">',
+        '<trkpt lat="47.644448" lon="-122.326697">',
         '<ele>6.87</ele>',
         '<time>2009-10-17T18:37:34Z</time>',
         '</trkpt>',
@@ -111,6 +111,7 @@ module.exports = {
             test.equal(result.tracks.length, 1);
             test.equal(result.tracks[0].segments.length, 1);
             test.equal(result.tracks[0].segments[0].length, 3);
+            test.equal(result.tracks[0].length(), 0.01620806320529664);
             test.done();
         });
 

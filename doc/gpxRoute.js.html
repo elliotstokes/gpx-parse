@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: gpxResult.js</title>
+    <title>JSDoc: Source: gpxRoute.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: gpxResult.js</h1>
+    <h1 class="page-title">Source: gpxRoute.js</h1>
     
     
 
@@ -25,40 +25,47 @@
     
     <section>
         <article>
-            <pre class="prettyprint source"><code>/**
- * Constructor for GpxResult
- * @class
- * @classdesc Holds the results of the gpx parse
- * @param {string} creator The creator of the gpx
- */
-function GpxResult(metadata, waypoints, routes, tracks) {
-	
-	metadata = metadata || null;
-	waypoints = waypoints || null;
-	routes = routes || null;
-	tracks = tracks || null;
+            <pre class="prettyprint source"><code>
+/**
+* Constructs a gpx route.
+* @class
+* @classdesc represents a route, an ordered list of waypoints representing a series of turn points leading to a destination.
+* @param {string} name The name of the route.
+* @param {string} cmt A comment regarding the route.
+* @param {string} desc A description of the route.
+* @param {object[]} points An array of waypoints representing the route.
+**/
+function GpxRoute(name, cmt, desc, points) {
 
+	name = name || "";
+	desc = desc || "";
+	cmt = cmt || "";
+	points = points || [];
 
-	this.__defineGetter__("metadata", function() {
-		return metadata;
+	this.__defineGetter__("name", function() {
+		return name;
 	});
 
-	this.__defineGetter__("waypoints", function() {
-		return waypoints;
+	this.__defineGetter__("cmt", function() {
+		return cmt;
 	});
 
-	this.__defineGetter__("routes", function() {
-		return routes;
+	this.__defineGetter__("description", function() {
+		return desc;
 	});
 
-	this.__defineGetter__("tracks", function() {
-		return tracks;
+	this.__defineGetter__("points", function() {
+		return points;
 	});
+
+	this.point = function(index) {
+		return points[index];
+	};
+
 }
 
-
-
-module.exports = GpxResult;</code></pre>
+module.exports = GpxRoute;
+</code></pre>
         </article>
     </section>
 
