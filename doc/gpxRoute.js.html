@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: gpxExtent.js</title>
+    <title>JSDoc: Source: gpxRoute.js</title>
     
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">Source: gpxExtent.js</h1>
+    <h1 class="page-title">Source: gpxRoute.js</h1>
     
     
 
@@ -25,40 +25,46 @@
     
     <section>
         <article>
-            <pre class="prettyprint source"><code>/**
-* Contructor for gpx extent
-* @classdesc Stores an extent.
+            <pre class="prettyprint source"><code>
+/**
+* Constructs a gpx route.
 * @class
-* @param {number} minx The minimum x value
-* @param {number} miny The minimum y value
-* @param {number} maxx The maximum x value
-* @param {number} miny The maximum y value
-*/
-function GpxExtent(minx, miny, maxx, maxy) {
+* @classdesc represents a route, an ordered list of waypoints representing a series of turn points leading to a destination.
+* @param {string} name The name of the route.
+* @param {string} cmt A comment regarding the route.
+* @param {string} desc A description of the route.
+* @param {object[]} points An array of waypoints representing the route.
+**/
+function GpxRoute(name, cmt, desc, points) {
 
-	minx = minx || -1;
-	miny = miny || -1;
-	maxx = maxx || -1;
-	maxy = maxy || -1;
+	name = name || "";
+	desc = desc || "";
+	cmt = cmt || "";
+	points = points || [];
 
-	this.__defineGetter__("minx", function() {
-		return minx;
+	this.__defineGetter__("name", function() {
+		return name;
 	});
 
-	this.__defineGetter__("miny", function() {
-		return miny;
+	this.__defineGetter__("cmt", function() {
+		return cmt;
 	});
 
-	this.__defineGetter__("maxx", function() {
-		return maxx;
+	this.__defineGetter__("description", function() {
+		return desc;
 	});
 
-	this.__defineGetter__("maxy", function() {
-		return maxy;
+	this.__defineGetter__("points", function() {
+		return points;
 	});
+
+	this.point = function(index) {
+		return points[index];
+	};
+
 }
 
-module.exports = GpxExtent;
+module.exports = GpxRoute;
 </code></pre>
         </article>
     </section>
