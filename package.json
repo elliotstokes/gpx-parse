@@ -17,12 +17,14 @@
     "url": "https://github.com/elliotstokes/gpx-parse.git"
   },
   "devDependencies": {
-    "nodeunit": "*",
-    "sandboxed-module": "*",
-    "jscoverage": "*",
     "coveralls": "*",
     "grunt": "^0.4.5",
-    "grunt-jsdoc": "^0.5.4"
+    "grunt-jsdoc": "^0.5.4",
+    "jscoverage": "*",
+    "nodeunit": "*",
+    "sandboxed-module": "*",
+    "server-destroy": "^1.0.0",
+    "st": "^0.5.1"
   },
   "scripts": {
     "test": "node_modules/.bin/nodeunit tests/",

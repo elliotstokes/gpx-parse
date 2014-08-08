@@ -24,6 +24,11 @@ gpxParse.parseGpx("<gpx></gpx>", function(error, data) {
 	//do stuff
 });
 
+// or an external file via HTTP(S)
+gpxParse.parseRemoteGpxFile("http://host.tld/my.gpx", function(error, data) {
+    //do stuff
+});
+
 ```
 
 #Tests
