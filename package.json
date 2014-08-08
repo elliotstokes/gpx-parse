@@ -10,7 +10,7 @@
     "geo"
   ],
   "dependencies": {
-    "xml2js": "*"
+    "xml2js": "^0.4.4"
   },
   "repository": {
     "type": "git",
