@@ -112,6 +112,7 @@ module.exports = {
             test.equal(result.tracks[0].segments.length, 1);
             test.equal(result.tracks[0].segments[0].length, 3);
             test.equal(result.tracks[0].length(), 0.01620806320529664);
+            test.equal(result.routes[0].length(), 0.5524612913540421);
             test.done();
         });
 
