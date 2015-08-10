@@ -16,7 +16,7 @@ module.exports = function(grunt) {
           },
           dist: {
             src: 'index.js',
-            dest: 'gpx-parse.js',
+            dest: 'dist/gpx-parse-browser.js',
             options: {
               alias: [
                 // Mockup to avoid loading lib-cov/gpx-parse in the browserify build process
