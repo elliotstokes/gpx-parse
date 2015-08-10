@@ -10,7 +10,8 @@
     "geo"
   ],
   "dependencies": {
-    "xml2js": "^0.4.4"
+    "xml2js": "^0.4.4",
+    "browserify": "~11.0.1"
   },
   "repository": {
     "type": "git",
