@@ -11,6 +11,8 @@ More information available on the [Project Page](http://www.vapidspace.com/gpx-p
 
 #Usage
 
+The module has been designed to work within node but you can also use it on the client side using the browserfy version that can be found in the dist folder.
+
 ```javascript
 var gpxParse = require("gpx-parse");
 
