@@ -1,8 +1,6 @@
-var st = require('st')
-var http = require('http')
-
+var st = require('st');
+var http = require('http');
 var enableDestroy = require('server-destroy');
-
 var gpxParse = require("../");
 
 var server;
