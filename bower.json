@@ -1,0 +1,26 @@
+{
+  "name": "gpx-parse",
+  "description": "GPX parser for Node.js",
+  "main": "index.js",
+  "authors": [
+    "Elliot Stokes"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gpx",
+    "parser",
+    "gps",
+    "geo"
+  ],
+  "homepage": "https://github.com/elliotstokes/gpx-parse",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
