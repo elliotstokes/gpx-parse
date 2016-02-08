@@ -3,7 +3,7 @@ var gpxParse = require("../"),
     GpxWaypoint = gpxParse.GpxWaypoint,
     GpxExtent = gpxParse.GpxExtent,
     GpxMetaData = gpxParse.GpxMetaData,
-    GpxRoute = gpxParse.GpxRoute;
+    GpxRoute = gpxParse.GpxRoute,
     GpxTrack = gpxParse.GpxTrack;
 
 module.exports = {
