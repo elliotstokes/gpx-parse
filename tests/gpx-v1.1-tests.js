@@ -55,6 +55,7 @@ module.exports = {
       test.equal(result.tracks.length, 1);
       test.equal(result.tracks[0].name, 'Example GPX Document');
       test.equal(result.tracks[0].segments[0][0].time, new Date('2009-10-17T18:37:26Z').toString());
+      test.equal(result.tracks[0].segments[0][0].elevation, 4.46);
       test.done();
     });
 
@@ -63,7 +64,7 @@ module.exports = {
   "Should return an error when file does not exist" : function(test) {
     gpxParse.parseGpxFromFile("/path/to/incorrect/gpxFile.gpx", function(error, result) {
       test.notEqual(null, error);
-      test.equal(error.message, "ENOENT, open '/path/to/incorrect/gpxFile.gpx'");
+      test.equal(error.message.startsWith('ENOENT'), true);
       test.done();
     });
   },
