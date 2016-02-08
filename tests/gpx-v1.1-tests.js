@@ -64,7 +64,7 @@ module.exports = {
   "Should return an error when file does not exist" : function(test) {
     gpxParse.parseGpxFromFile("/path/to/incorrect/gpxFile.gpx", function(error, result) {
       test.notEqual(null, error);
-      test.equal(error.message.startsWith('ENOENT'), true);
+      test.equal(error.message.indexOf('ENOENT'), 0);
       test.done();
     });
   },
