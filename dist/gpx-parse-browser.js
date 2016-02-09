@@ -81,13 +81,13 @@ var assert = require("assert"),
     url = require("url"),
     http = require("http"),
     https = require("https"),
-	GpxResult = require('./gpxResult'),
-	GpxExtent = require('./gpxExtent'),
-	GpxWaypoint = require('./gpxWaypoint'),
-	GpxTrack = require('./gpxTrack'),
-	GpxMetaData = require('./gpxMetaData'),
-	GpxRoute = require('./gpxRoute'),
-	geomUtils = require('./geomUtils');
+    GpxResult = require('./gpxResult'),
+    GpxExtent = require('./gpxExtent'),
+    GpxWaypoint = require('./gpxWaypoint'),
+    GpxTrack = require('./gpxTrack'),
+    GpxMetaData = require('./gpxMetaData'),
+    GpxRoute = require('./gpxRoute'),
+    geomUtils = require('./geomUtils');
 
 
 /**
@@ -95,17 +95,13 @@ var assert = require("assert"),
  * @param {Array<Object>} gpxWaypoints - The array of points from the xml
  */
 var _getWayPoints = function(gpxWaypoints) {
-
-	var waypoints = [],
-		currentWaypoint = null,
-		point = null;
-	if (gpxWaypoints !== null && gpxWaypoints !== undefined) {
-		//grab waypoints
-		for (var i = 0, il = gpxWaypoints.length; i < il; i++) {
-			currentWaypoint = gpxWaypoints[i];
-			point = new GpxWaypoint(currentWaypoint.$.lat, currentWaypoint.$.lon, currentWaypoint.ele, currentWaypoint.time);
-			waypoints.push(point);
-		}
+	var waypoints = [];
+	if (gpxWaypoints && gpxWaypoints.length) {
+		gpxWaypoints.forEach(function(wayPoint) {
+      console.log(wayPoint.desc);
+      var point = new GpxWaypoint(wayPoint.$.lat, wayPoint.$.lon, getFloat(wayPoint.ele), wayPoint.time, null, null, getString(wayPoint.name), null, getString(wayPoint.desc));
+      waypoints.push(point);
+    });
 	}
 
 	return waypoints;
@@ -115,62 +111,73 @@ var _getWayPoints = function(gpxWaypoints) {
  * Parses routes into an array of route objects
  */
 var _getRoutes = function(gpxRoutes) {
-	//grab routes
-	var routes = [],
-		route = null;
-	if (gpxRoutes !== null && gpxRoutes !== undefined) {
-		for (var i = 0, il = gpxRoutes.length; i < il; i++) {
-			//clear out route points
-			var routePoints = [],
-			currentRoute = gpxRoutes[i];
+	var routes = [];
 
-			for (var j = 0, jl = currentRoute.rtept.length; j < jl; j++) {
-				routePoints.push(new GpxWaypoint(currentRoute.rtept[j].$.lat, currentRoute.rtept[j].$.lon));
-			}
+	if (gpxRoutes && gpxRoutes.length) {
+    gpxRoutes.forEach(function(currentRoute) {
+			var routePoints = [];
 
-			route = new GpxRoute(gpxRoutes.name, gpxRoutes.cmt, gpxRoutes.desc, routePoints);
+			currentRoute.rtept.forEach(function(routePoint) {
+				routePoints.push(new GpxWaypoint(routePoint.$.lat, routePoint.$.lon));
+			});
 
-
+			var route = new GpxRoute(gpxRoutes.name, gpxRoutes.cmt, gpxRoutes.desc, routePoints);
 			routes.push(route);
-		}
+		});
 	}
 
 	return routes;
 };
 
+/**
+ * Gets a float from an element
+ **/
+var getFloat = function(item) {
+  var value = null;
+  if (item && Array.isArray(item) && item.length > 0) {
+    value = parseFloat(item[0]);
+  }
+  return value;
+};
+
+/**
+ * Gets a string from an element
+ **/
+var getString = function(item) {
+  var value = null;
+  if (item && Array.isArray(item) && item.length > 0) {
+    value = item[0].toString();
+  }
+  return value;
+};
+
+/**
+ * Grabs any tracks contained within the gpx
+ * @params {Object} gpxTracks - THe gpcx tracks from the file
+ **/
 var _getTracks = function(gpxTracks) {
-	//grab tracks
 	var tracks = [];
 
-	for (var i = 0, il = gpxTracks.length; i < il; i++) {
+  if (gpxTracks && gpxTracks.length) {
+  	
+    gpxTracks.forEach(function(currentTrack) {
+  	
+  		var trackSegments = [];
 
-		var trackSegments = [],
-			currentTrack = gpxTracks[i],
-			trackName = null;
+      currentTrack.trkseg.forEach(function(currentSegment) {
+  			var trackSegement = [];
 
-		if (currentTrack.name) {
-			trackName = currentTrack.name[0];
-		}
+        currentSegment.trkpt.forEach(function(trackPoint) {
+  				var elevation = getFloat(trackPoint.ele);
+  				trackSegement.push(new GpxWaypoint(trackPoint.$.lat, trackPoint.$.lon, elevation, trackPoint.time));
+  			});
 
-		for (var j = 0, jl = currentTrack.trkseg.length; j < jl; j++) {
+  			trackSegments.push(trackSegement);
+  		});
 
-			var trackSegement = [],
-				currentSegment = currentTrack.trkseg[j],
-				time;
-
-			for (var k = 0, kl = currentSegment.trkpt.length; k < kl; k++) {
-
-				var trackPoint = currentSegment.trkpt[k],
-					elevation = trackPoint.ele;
-				time = trackPoint.hasOwnProperty('time') ? trackPoint.time :null;
-				trackSegement.push(new GpxWaypoint(trackPoint.$.lat, trackPoint.$.lon, elevation, time));
-			}
-
-			trackSegments.push(trackSegement);
-		}
-
-		tracks.push(new GpxTrack(trackSegments, trackName));
-	}
+  		tracks.push(new GpxTrack(trackSegments, getString(currentTrack.name)));
+  	});
+  }
 
 	return tracks;
 };
@@ -189,14 +196,14 @@ var _ParseV10 = function(gpx) {
 	return new GpxResult(metadata, _getWayPoints(gpx.wpt), _getRoutes(gpx.rte), _getTracks(gpx.trk));
 };
 
+/**
+ * Parses v1.1 data into data structure
+ */
 var _ParseV11 = function(gpx) {
-	var metadata,
-			time;
-	if (gpx.metadata && gpx.metadata[0]) {
-		if (gpx.metadata[0].time) {
-			time = gpx.metadata[0].time[0];
-		}
-		metadata = new GpxMetaData(gpx.$.creator, time);
+	var metadata;
+  
+	if (gpx.metadata && gpx.metadata.length > 0) {
+		metadata = new GpxMetaData(gpx.$.creator, getString(gpx.metadata[0].time));
 	} else {
 		metadata = new GpxMetaData();
 	}
@@ -222,22 +229,26 @@ exports.parseGpx = function(gpxString, callback) {
 		}
 
 		try {
-    		if (!data.hasOwnProperty('gpx')||!data.gpx.hasOwnProperty('$'))
-    			return callback(new Error("version not specified"), null);
+      if (!data.gpx) return callback(new Error("version not specified"), null);
 
-    		version = data.gpx.$.version;
-    		if (version === "1.0") {
-    			gpxResult = _ParseV10(data.gpx);
-    		} else if (version === "1.1") {
-    			gpxResult = _ParseV11(data.gpx);
-    		} else {
-    			callback(new Error("version not supported"), null);
-    			return;
-    		}
-            callback(null, gpxResult);
-        } catch (error) {
-            return callback(error);
-        }
+    	version = data.gpx.$.version;
+    	
+      switch (version) {
+        case "1.0":
+          gpxResult = _ParseV10(data.gpx);
+          break;
+        case "1.1":
+          gpxResult = _ParseV11(data.gpx);
+          break;
+        default:
+          return callback(new Error("version not supported"), null);
+      }
+
+      callback(null, gpxResult);
+   
+    } catch (error) {
+      return callback(error);
+    }
 	});
 };
 
@@ -568,14 +579,13 @@ module.exports = GpxTrack;
  * @param {string} type The type of waypoint.
  **/
 function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, desc, src, links, sym, type) {
-
 	lat = parseFloat(lat) || -1;
 	lon = parseFloat(lon) || -1;
 	elevation = elevation || -1;
-	time = new Date(time) || null;
-	name = name || "";
+	time =  time ? new Date(time) : null;
+	name = name || null;
 	cmt = cmt || "";
-	desc = desc || "";
+	desc = desc || null;
 	src = src || "";
 	type = type || "";
 
@@ -590,6 +600,7 @@ function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, 
 		return name;
 	});
 
+
 	/**
 	* cmt of the Waypoint
 	* @name cmt
@@ -603,14 +614,14 @@ function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, 
 
 	/**
 	* Description of the Waypoint
-	* @name desc
+	* @name description
 	* @memberOf GpxWaypoint
 	* @instance
 	* @type {string}
 	**/
-	this.__defineGetter__("desc", function() {
-		return desc;
-	});
+	Object.defineProperty(this,'description', {
+  	get: function() { return desc; }
+  });
 
 	this.__defineGetter__("src", function() {
 		return src;
