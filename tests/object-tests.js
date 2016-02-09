@@ -63,7 +63,7 @@ module.exports = {
         test.equal(gpxPoint.time.getTime(),1014830313000 );
         test.equal(gpxPoint.name, "name");
         test.equal(gpxPoint.cmt, "cmt");
-        test.equal(gpxPoint.desc, "description");
+        test.equal(gpxPoint.description, "description");
         test.done();
     },
 
