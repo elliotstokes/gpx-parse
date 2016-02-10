@@ -1,7 +1,7 @@
 {
   "name": "gpx-parse",
-  "description": "GPX parser for Node.js",
-  "main": "index.js",
+  "description": "GPX parser for Node.js and the Browser",
+  "main": "dist/gpx-parse-browser.js",
   "authors": [
     "Elliot Stokes"
   ],
