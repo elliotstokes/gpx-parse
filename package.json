@@ -1,8 +1,9 @@
 {
   "name": "gpx-parse",
   "author": "Elliot Stokes",
-  "description": "GPX parser for Node.js",
+  "description": "a GPX parser for Node and client-side JavaScript.",
   "version": "0.10.2",
+  "license": "MIT",
   "keywords": [
     "gpx",
     "parser",

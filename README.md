@@ -1,13 +1,17 @@
 gpx-parse [![NPM Version](https://badge.fury.io/js/gpx-parse.png)](https://badge.fury.io/js/gpx-parse) [![Build Status](https://travis-ci.org/elliotstokes/gpx-parse.png?branch=master)](https://travis-ci.org/elliotstokes/gpx-parse) [![Coverage Status](https://coveralls.io/repos/elliotstokes/gpx-parse/badge.png?branch=master)](https://coveralls.io/r/elliotstokes/gpx-parse?branch=master) [![Code Climate](https://codeclimate.com/github/elliotstokes/gpx-parse.png)](https://codeclimate.com/github/elliotstokes/gpx-parse)
 ========
 
-A library for parsing gpx data. Still in its infancy. Works against most/some of the Gpx v1.0 spec and Gpx v1.1. Looking to support whole spec eventually. Feel free to fork if you need something specific.
+A library for parsing gpx data. Works against most of the Gpx v1.0 spec and Gpx v1.1. Feel free to fork if you need something specific.
 
 More information available on the [Project Page](http://www.vapidspace.com/gpx-parse)
 
 #Installation
 
 	$ npm install gpx-parse
+
+#Or with bower
+
+	$ bower install gpx-parse
 
 #Usage
 
