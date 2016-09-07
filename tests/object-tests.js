@@ -75,6 +75,18 @@ module.exports = {
         test.done();
     },
 
+    "Test that the gpxRoute can be reversed": function(test) {
+      var gpxRoute = new GpxRoute("name", "cmt", "description", [new GpxWaypoint(1, 2), new GpxWaypoint(3, 4)]);
+      test.equal(gpxRoute.point(0).lat, 1);
+      test.equal(gpxRoute.point(0).lon, 2);
+
+      gpxRoute.reverse();
+
+      test.equal(gpxRoute.point(0).lat, 3);
+      test.equal(gpxRoute.point(0).lon, 4);
+      test.done();
+    },
+
     "Test that the gpxTrack can be initialized": function(test) {
         var gpxTrack = new GpxTrack([[new GpxWaypoint(1, 2), new GpxWaypoint(3, 4)],[new GpxWaypoint(5, 6), new GpxWaypoint(7, 8)]], "name");
         test.equal(gpxTrack.name, "name");
