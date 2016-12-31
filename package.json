@@ -18,17 +18,17 @@
     "url": "https://github.com/elliotstokes/gpx-parse.git"
   },
   "devDependencies": {
-    "browserify": "~11.0.1",
+    "browserify": "~13.1.1",
     "coveralls": "*",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^4.0.1",
-    "grunt-cli": "^0.1.13",
-    "grunt-jsdoc": "^0.5.4",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-jsdoc": "^2.1.0",
     "jscoverage": "*",
     "nodeunit": "*",
     "sandboxed-module": "*",
     "server-destroy": "^1.0.0",
-    "st": "^0.5.1"
+    "st": "^1.2.0"
   },
   "scripts": {
     "test": "node_modules/.bin/nodeunit tests/",
