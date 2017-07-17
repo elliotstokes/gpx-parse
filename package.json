@@ -36,5 +36,8 @@
     "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests | coveralls",
     "lcov": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests",
     "browserify": "node_modules/.bin/grunt browserify"
+  },
+  "browserify":{
+    "./lib-cov/gpx-parse.js": false
   }
 }
