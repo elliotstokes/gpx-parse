@@ -11,13 +11,19 @@ module.exports = {
     },
 
     "Should calculate the distance between two points": function(test) {
-        var distance = geomUtils.calculateDistance(4.367, 5.6745, -40.4556, 39.34345);
-        test.equal(distance, 6045.97811789512);
+        var distanceInKm = geomUtils.calculateDistance(4.367, 5.6745, -40.4556, 39.34345);
+        var distanceInMiles = geomUtils.calculateDistance(4.367, 5.6745, -40.4556, 39.34345, true);
+        
+        test.equal(distanceInKm, 6045.97811789512);
+        test.equal(distanceInMiles, distanceInKm/1.609453993933266 ); 
         test.done();
     },
 
     "Should calculate the midpoint between two points" : function(test) {
-        geomUtils.calculateMidpoint(4.367, 5.6745, -40.4556, 39.34345);
+        var midpoint = geomUtils.calculateMidpoint(4.367, 5.6745, -40.4556, 39.34345);
+        
+        test.deepEqual(midpoint, [ -18.7821348599706, 20.181135926320035] );
         test.done();
     }
 };
+
