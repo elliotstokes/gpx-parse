@@ -107,6 +107,7 @@ module.exports = {
             test.equal(result.routes[0].points.length, 4);
             test.equal(result.routes[0].point(0).lat, 42.43095);
             test.equal(result.routes[0].point(0).lon, -71.107628);
+            test.equal(result.routes[0].point(0).name, "BELLEVUE");
             test.equal(result.tracks.length, 1);
             test.equal(result.tracks[0].segments.length, 1);
             test.equal(result.tracks[0].segments[0].length, 3);
