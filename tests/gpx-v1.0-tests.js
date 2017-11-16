@@ -82,11 +82,17 @@ var gpxParse = require("../"),
         '</gpx>'
     ].join('\n');
 
-
+    var fs = require('fs');
+    var gsGpx = "";
 
 module.exports = {
     setUp: function(callback) {
-        callback();
+        fs.readFile('export_test_oneline.gpx', 'utf8', function(err, data) {  
+            if (err) throw err;
+            gsGpx = data;
+            callback();
+            
+        });    
     },
     tearDown: function(callback) {
         // clean up
@@ -145,5 +151,23 @@ module.exports = {
             test.equal(result.waypoints[0].name, "5066");
             test.done();
         });        
+    },
+    "Test that valid c:geo gpx string is parsed successfully": function(test) {
+        gpxParse.parseGpx(gsGpx, function(error, result) {
+
+            test.equal(error, null);
+            test.equal(result.metadata.creator, "c:geo - http://www.cgeo.org/");
+            test.equal(result.waypoints.length, 8);
+            test.equal(result.waypoints[0].lat, 60.193167);
+            test.equal(result.waypoints[1].lon, 24.768717);
+            test.equal(result.waypoints[0].name, 'GC6N82C');
+            test.equal(result.waypoints[0].type, 'Geocache|Multi-cache');
+            test.equal(result.waypoints[0].cacheId, '5763379');
+            test.equal(result.waypoints[0].cacheType, 'Multi-cache');
+            test.equal(result.routes.length, 0);
+            test.equal(result.tracks.length, 0);
+            test.done();
+        });
+
     }
 };
