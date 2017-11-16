@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<gpx version="1.0" creator="c:geo - http://www.cgeo.org/" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd http://www.groundspeak.com/cache/1/0/1 http://www.groundspeak.com/cache/1/0/1/cache.xsd http://www.gsak.net/xmlv1/6 http://www.gsak.net/xmlv1/6/gsak.xsd" 
+    xmlns="http://www.topografix.com/GPX/1/0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:groundspeak="http://www.groundspeak.com/cache/1/0/1" 
+    xmlns:gsak="http://www.gsak.net/xmlv1/6" 
+    xmlns:cgeo="http://www.cgeo.org/wptext/1/0">
+    <wpt lat="60.158017" lon="24.788383">
+        <time>2009-07-24T00:00:00Z</time>
+        <name>GC1WA7Z</name>
+        <desc>Unohdetut linnoitukset</desc>
+        <url>https://coord.info/GC1WA7Z</url>
+        <urlname>Unohdetut linnoitukset</urlname>
+        <sym>Geocache</sym>
+        <type>Geocache|Traditional Cache</type>
+        <groundspeak:cache id="1326615" available="True" archived="False">
+            <groundspeak:name>Unohdetut linnoitukset</groundspeak:name>
+            <groundspeak:placed_by>Huuko, adopted by mandello</groundspeak:placed_by>
+            <groundspeak:owner>mandello</groundspeak:owner>
+            <groundspeak:type>Traditional Cache</groundspeak:type>
+            <groundspeak:container>Micro</groundspeak:container>
+            <groundspeak:attributes>
+                <groundspeak:attribute id="64" inc="0">Tree climbing not required</groundspeak:attribute>
+                <groundspeak:attribute id="1" inc="1">Dogs allowed</groundspeak:attribute>
+                <groundspeak:attribute id="7" inc="1">Takes less than an hour</groundspeak:attribute>
+                <groundspeak:attribute id="15" inc="1">Available during winter</groundspeak:attribute>
+                <groundspeak:attribute id="25" inc="1">Parking available</groundspeak:attribute>
+                <groundspeak:attribute id="32" inc="1">Bicycles allowed</groundspeak:attribute>
+                <groundspeak:attribute id="42" inc="1">Needs maintenance</groundspeak:attribute>
+            </groundspeak:attributes>
+            <groundspeak:difficulty>1.5</groundspeak:difficulty>
+            <groundspeak:terrain>3</groundspeak:terrain>
+            <groundspeak:country>Finland</groundspeak:country>
+            <groundspeak:state></groundspeak:state>
+            <groundspeak:short_description html="False">Kätkö unohdetusssa Toppelundin linnoituksessa Espoossa.</groundspeak:short_description>
+            <groundspeak:long_description html="True">[FIN] KATSO MIHIN ASTUT! Alueella on lähes täysin kasvillisuuden peittämiä juoksuhautoja. Talvella lumi ja jää korvaa kasvuston. Kätkö on kuitenkin turvallista hakea. Helpoiten lähestyminen tapahtuu Toppelundintieltä lähtevää polkua pitkin.&lt;br /&gt; &lt;br /&gt; [ENG] Caution! There are several trenches and foxholes totally covered by vegetation in this area. In the winter vegetation is replaced by snow. Searching for a proper hideout with extreme caution is strongly recommended. The easiest approach is using a path from the Toppelundintie.&lt;br /&gt; &lt;br /&gt; [FIN] Vuosina 1914 - 1917 venäläiset rakensivat valtavan maalinnoituksen Helsingin ympärille suojaksi pelättyä saksalaisten hyökkäystä vastaan. Maalinnoitus ulottuu ketjuna Espoon Toppelundista aina Helsingin Vuosaareen asti. Se kulkee läpi Helsingin lähiöiden ja pientaloalueiden. Linnoituksesta on jäljellä noin kaksi kolmannesta, noin puolet tästä on huonossa kunnossa.&lt;br /&gt; Tämän alueen info-taulu on tuhottu.&lt;br /&gt; Useimmat kaupunkilaiset eivät enää tiedä mitä omasta naapurustosta löytyvät rakennelmat ovat.&lt;br /&gt; &lt;br /&gt; [ENG] Between 1914 and 1917 Russian forces vastly fortificated the surroundings of Helsinki in order to protect the capital area against a much-feared German offensive. The chain of fortifications reached from Toppelund in the neighbouring town, Espoo all the way to Vuosaari in eastern Helsinki. This line of fortifications penetrates several current housing estates and other modern constructed areas.&lt;br /&gt; &lt;br /&gt; The very existence of these hugely important historical constructions is by large forgotten even by the local population; Very few would be able to recognize and describe these elements in their own environment. The missing tourist information sign speaks its own language: Only approximately one third of the fortification remains, and the still-existing ruins are already in a very lousy condition.&lt;br /&gt; &lt;br /&gt; BRING YOUR OWN PEN! OMA KYNÄ MUKAAN!</groundspeak:long_description>
+            <groundspeak:encoded_hints>tolppa / post</groundspeak:encoded_hints>
+            <groundspeak:logs>
+                <groundspeak:log id="1322442">
+                    <groundspeak:date>2017-10-08T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Found it</groundspeak:type>
+                    <groundspeak:finder id="">steeldrake</groundspeak:finder>
+                    <groundspeak:text encoded="False">Kk</groundspeak:text>
+                </groundspeak:log>
+                <groundspeak:log id="1322443">
+                    <groundspeak:date>2017-10-08T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Found it</groundspeak:type>
+                    <groundspeak:finder id="">moimoimoi</groundspeak:finder>
+                    <groundspeak:text encoded="False">Steeldraken ja geokoiran kanssa steeldraken lapsuuden maisemissa tällä kertaa purkkeja etsimässä. Tämäkin löytyi että naps ja kops!</groundspeak:text>
+                </groundspeak:log>
+                <groundspeak:log id="1322444">
+                    <groundspeak:date>2017-09-30T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Found it</groundspeak:type>
+                    <groundspeak:finder id="">Andagol</groundspeak:finder>
+                    <groundspeak:text encoded="False">Olisinpa hoksannut ottaa tukevammat kengät. KK! Seuraavaksi multille.</groundspeak:text>
+                </groundspeak:log>
+            </groundspeak:logs>
+        </groundspeak:cache>
+        <gsak:wptExtension>
+            <gsak:Watch>false</gsak:Watch>
+            <gsak:IsPremium>false</gsak:IsPremium>
+            <gsak:FavPoints>10</gsak:FavPoints>
+            <gsak:GcNote></gsak:GcNote>
+        </gsak:wptExtension>
+    </wpt>
+    <wpt lat="60.1593" lon="24.787233">
+        <name>PK1WA7Z</name>
+        <cmt>Päiväkodin vieressä oleva pysäköintipaikka, jonka nurkasta lähtee polku kätkölle.</cmt>
+        <desc>GC1WA7Z Parking</desc>
+        <sym>Parking Area</sym>
+        <type>Waypoint|Parking Area</type>
+        <gsak:wptExtension>
+            <gsak:Parent>GC1WA7Z</gsak:Parent>
+        </gsak:wptExtension>
+    </wpt>
+    <wpt lat="60.15675" lon="24.785717">
+        <time>2009-05-10T00:00:00Z</time>
+        <name>GC1R5WJ</name>
+        <desc>Lonely Island</desc>
+        <url>https://coord.info/GC1R5WJ</url>
+        <urlname>Lonely Island</urlname>
+        <sym>Geocache</sym>
+        <type>Geocache|Traditional Cache</type>
+        <groundspeak:cache id="1233045" available="True" archived="False">
+            <groundspeak:name>Lonely Island</groundspeak:name>
+            <groundspeak:placed_by>mpkoo</groundspeak:placed_by>
+            <groundspeak:owner>mpkoo</groundspeak:owner>
+            <groundspeak:type>Traditional Cache</groundspeak:type>
+            <groundspeak:container>Regular</groundspeak:container>
+            <groundspeak:attributes>
+                <groundspeak:attribute id="32" inc="1">Bicycles allowed</groundspeak:attribute>
+                <groundspeak:attribute id="13" inc="1">Available at all times</groundspeak:attribute>
+                <groundspeak:attribute id="11" inc="1">May require wading</groundspeak:attribute>
+                <groundspeak:attribute id="15" inc="1">Available during winter</groundspeak:attribute>
+                <groundspeak:attribute id="42" inc="1">Needs maintenance</groundspeak:attribute>
+                <groundspeak:attribute id="1" inc="1">Dogs allowed</groundspeak:attribute>
+            </groundspeak:attributes>
+            <groundspeak:difficulty>1</groundspeak:difficulty>
+            <groundspeak:terrain>3</groundspeak:terrain>
+            <groundspeak:country>Finland</groundspeak:country>
+            <groundspeak:state></groundspeak:state>
+            <groundspeak:short_description html="True">&lt;b&gt;[FIN]&lt;/b&gt; Peruskätkö Espoossa, Toppelundin ja Mellstenin uimaranta alueella.&lt;br /&gt; &lt;b&gt;[ENG]&lt;/b&gt; Basic cache in Espoo, near the Toppelund and Mellsten beaches.</groundspeak:short_description>
+            <groundspeak:long_description html="True">&lt;p&gt;&lt;img src="http://img.geocaching.com/cache/8bae7f4d-eee0-4e1e-8f30-3a54ded8c4b5.jpg" alt="Mellsten" /&gt;&lt;/p&gt; &lt;p&gt;&lt;b&gt;&lt;u&gt;Suomeksi&lt;/u&gt;&lt;/b&gt;&lt;/p&gt; &lt;p&gt;Kätkö esittelee hienon uimaranta alueen Espoon rantaraitin varrella. Alue koostuu kahdesta erillisestä uimarannasta sekä niiden väliin jäävästä koirien uimapaikasta. Kesähelteillä siis geokoiratkin saattavat innostua ja pitää tästä kätköstä.&lt;/p&gt; &lt;p&gt;Kätköltä hiukan itään sijaitsee toinen uimarannoista, Toppelund. Tämä pienempi ja palveluiltaan hiukan heikompi uimaranta tarjoaa pukukopit ja suihkun uimareiden käyttöön. Ranta on erityisesti lapsiperheiden suosiossa matalan rannan ja suojaa tuovan allonmurtajan takia.&lt;/p&gt; &lt;p&gt;Kätköltä länteen lähdettäessä tulee ensiksi vastaan koirien uimapaikka ja sen jälkeen alkaa ranta-alue joka päättyy Mellstenin valvottuun uimarantaan. Aluetta pitää tukikohtanaan myös purjelautailijat. Tämä isompi ja palveluiltaan monipuolisempi ranta-alue tunnetaan myös nimellä Haukilahden uimaranta. Uimarannalla on suihkujen ja pukukoppien lisäksi beachvolley-kenttä, kioskipalvelut ja kesäterassi. Ranta on kesäisin erityisesti auringon palvojien suosiossa, mutta onneksi pitkällä rantakaistaleella löytyy paljon tilaa.&lt;/p&gt; &lt;p&gt;&lt;b&gt;Terrain vaihtelee merenpinnan korkeuden mukaan.&lt;/b&gt; Pahimmillaan, päästäksesi kätkölle kuivin jaloin, saatat joutua käyttämään kumisaappaita tai jopa kahluusaappaita.&lt;/p&gt; &lt;p&gt;Kesäaikaan alueella on paljon ihmisiä, mutta kätkö sijaitsee sen verran syrjässä vilkkaimmista paikoista, että uimareista ja auringonpalvojista ei pitäisi olla haittaa.&lt;/p&gt; &lt;p&gt;&lt;img src="http://img.geocaching.com/cache/cfd61aef-f5ba-46c6-8ef2-40c239e0fe2e.jpg" alt="Toppelund" /&gt;&lt;/p&gt; &lt;p&gt;&lt;b&gt;&lt;u&gt;English&lt;/u&gt;&lt;/b&gt;&lt;/p&gt; &lt;p&gt;This cache introduces you to nice beach area along the routes of Espoo rantaraitti. This area has two different beaches and a beach for the dogs between them. So during the warm summer days the geodogs might be interested in this cache.&lt;/p&gt; &lt;p&gt;To the east from cache site is located a beach called Toppelund. It has the normal facilities such as showers and cabins to change the clothes. This beach is popular among families with children because the water in this beach is shallow and there is a breakwater giving some protection to the beach.&lt;/p&gt; &lt;p&gt;West from the cache is first a swimming area for the dogs and when going along the coast you will arrive to the larger beach called Mellsten. Beach, also known as Haukilahti beach, has good facilities. It is supervised and there are the normal showers and cabins to change clothes, but also beach volley field and small coffee place with sunny terrace. In the summertime the beach is full of people worshipping sun, but luckily the area is big enough so there is always room.&lt;/p&gt; &lt;p&gt;&lt;b&gt;Terrain rating depends on the sea level.&lt;/b&gt; Worst case is that you need rubber boots or pair of waders to reach the cache area unless you are brave enough to just take off your shoes and socks.&lt;/p&gt; &lt;p&gt;Usually in the summertime there is lot of people around, but the cache site is aside, so the swimmers and sun worshippers shouldn't be a problem.&lt;/p&gt;</groundspeak:long_description>
+            <groundspeak:encoded_hints></groundspeak:encoded_hints>
+            <groundspeak:logs>
+                <groundspeak:log id="1322523">
+                    <groundspeak:date>2017-09-10T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Found it</groundspeak:type>
+                    <groundspeak:finder id="">janneageottaa</groundspeak:finder>
+                    <groundspeak:text encoded="False">Tänään oli vesi korkealla. Ei kahluusaappaita. Ei siis muuta kuin kelluvia tukkeja pitkin tasapainoillen sinne ja takaisin! GPS pyöritti hetken, mutta sen rauhoituttua oli löytö nopea. Kk ja kiitos kivasta pikku akrobatiatunnista</groundspeak:text>
+                </groundspeak:log>
+                <groundspeak:log id="1322524">
+                    <groundspeak:date>2017-08-23T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Found it</groundspeak:type>
+                    <groundspeak:finder id="">The___A___team</groundspeak:finder>
+                    <groundspeak:text encoded="False">I en promenad på kvällen! TFTC!</groundspeak:text>
+                </groundspeak:log>
+                <groundspeak:log id="1322561">
+                    <groundspeak:date>2011-01-23T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Found it</groundspeak:type>
+                    <groundspeak:finder id="">sm07</groundspeak:finder>
+                    <groundspeak:text encoded="False">&lt;p&gt;helpohko löytö näin talvisaikaan kun ei tarvinnut pelätä jalkojen kastuvan. kesäaikaan käytiin jo tätä katsomassa mutta silloin ei rohkeus riittänyt.&lt;/p&gt; &lt;p&gt;hieno kätkö, pisteet tekijälle!&lt;/p&gt;</groundspeak:text>
+                </groundspeak:log>
+            </groundspeak:logs>
+            <groundspeak:travelbugs>
+                <groundspeak:travelbug ref="">
+                    <groundspeak:name>1000 : Island Starfish</groundspeak:name>
+                </groundspeak:travelbug>
+            </groundspeak:travelbugs>
+        </groundspeak:cache>
+        <gsak:wptExtension>
+            <gsak:Watch>false</gsak:Watch>
+            <gsak:IsPremium>false</gsak:IsPremium>
+            <gsak:FavPoints>13</gsak:FavPoints>
+            <gsak:GcNote></gsak:GcNote>
+        </gsak:wptExtension>
+    </wpt>
+    <wpt lat="60.1552" lon="24.78795">
+        <time>2011-09-20T00:00:00Z</time>
+        <name>GC34H3N</name>
+        <desc>Aallonmurtaja / Breaking Waves</desc>
+        <url>https://coord.info/GC34H3N</url>
+        <urlname>Aallonmurtaja / Breaking Waves</urlname>
+        <sym>Geocache</sym>
+        <type>Geocache|Traditional Cache</type>
+        <groundspeak:cache id="2495058" available="False" archived="False">
+            <groundspeak:name>Aallonmurtaja / Breaking Waves</groundspeak:name>
+            <groundspeak:placed_by>tukiopetuslapsi</groundspeak:placed_by>
+            <groundspeak:owner>tukiopetuslapsi</groundspeak:owner>
+            <groundspeak:type>Traditional Cache</groundspeak:type>
+            <groundspeak:container>Small</groundspeak:container>
+            <groundspeak:attributes>
+                <groundspeak:attribute id="15" inc="0">Not available during winter</groundspeak:attribute>
+                <groundspeak:attribute id="13" inc="1">Available at all times</groundspeak:attribute>
+                <groundspeak:attribute id="42" inc="1">Needs maintenance</groundspeak:attribute>
+            </groundspeak:attributes>
+            <groundspeak:difficulty>3</groundspeak:difficulty>
+            <groundspeak:terrain>2.5</groundspeak:terrain>
+            <groundspeak:country>Finland</groundspeak:country>
+            <groundspeak:state></groundspeak:state>
+            <groundspeak:short_description html="False"></groundspeak:short_description>
+            <groundspeak:long_description html="True">&lt;p&gt;(Scroll down for description in English.)&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Syvällä pimeydessä, aallonmurtajan armottomien kivien alla asustaa yötä mustempi rasia...&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;Tämä kätkö on hatunnosto Huukon jo arkistoidulle kätkölle “Jedan rantsu” (ja osa kuvauksestakin on lainattu häneltä). Kätkö tuo sinut toiselle Haukilahden uimarannoista. Ranta on matala ja suojainen, joten se sopii lapsiperheille erittäin hyvin. Aallonmurtaja, jolla kätkö sijaitsee, voi kuitenkin olla perheen pienimmille vaarallinen. Kesäisin rannalla on vilinää, joten pidäthän matalaa profiilia.&lt;/p&gt; &lt;p&gt;Tällä rannalla on kuvattu myös saippuasarjaa. Ne, jotka tunnistavat hahmon nimeltä Annika Sievinen, tietävät, mistä puhutaan.&lt;/p&gt; &lt;p&gt;Jos koordinaatit jostain syystä vievät aallonmurtajan kosteammalle puolelle, voi turvautua vinkkiin.&lt;/p&gt; &lt;hr /&gt; &lt;p&gt;&lt;strong&gt;Deep in the dark bowels of the pier, under the unforgiving rocks, lies a cache box darker than the night itself...&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;This cache tips its hat hat to Huuko's “Jedan rantsu”, which has been archived (and also some of this description has been borrowed from him). The cache brings you to one of the beaches in Haukilahti. The breakwater shelters the shallow beach, making this place exceptionally suitable for families with small children. However, the pier on which the cache is located may not be a safe place for toddlers. Please keep a low profile, since the beach is very popular in summertime.&lt;/p&gt; &lt;p&gt;This beach has been used as a backdrop in a popular, despicable Finnish soap opera. Fans of late (character) Annika Sievinen know what I am talking about.&lt;/p&gt; &lt;p&gt;If the GPS is guiding you off the breakwater, take a look at the hint.&lt;/p&gt;</groundspeak:long_description>
+            <groundspeak:encoded_hints>[fi] Kätkö sijaitsee noin kymmenen metrin päässä aallonmurtajan kärjestä. Se on syvällä.
+[en] The cache is located about ten meters from the tip of the breakwater. Go deep.</groundspeak:encoded_hints>
+            <groundspeak:logs>
+                <groundspeak:log id="1322482">
+                    <groundspeak:date>2017-07-23T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Temporarily Disable Listing</groundspeak:type>
+                    <groundspeak:finder id="">tukiopetuslapsi</groundspeak:finder>
+                    <groundspeak:text encoded="False">Kävin tänään toteamassa, että purkki ei ole paikallaan, eikä missään järkevässä paikassa lähistöllä. Löysin sentään samalla reissulla vielä häijymmän paikan seuraavalle purkille. Sitten kun vielä löytäisi sinne sopivan rasian...</groundspeak:text>
+                </groundspeak:log>
+                <groundspeak:log id="1322483">
+                    <groundspeak:date>2017-07-20T00:00:00Z</groundspeak:date>
+                    <groundspeak:type>Needs Maintenance</groundspeak:type>
+                    <groundspeak:finder id="">Kilpi</groundspeak:finder>
+                    <groundspeak:text encoded="False">Aika kauan odottanut huoltokäyntiä.</groundspeak:text>
+                </groundspeak:log>
+            </groundspeak:logs>
+        </groundspeak:cache>
+        <gsak:wptExtension>
+            <gsak:Watch>false</gsak:Watch>
+            <gsak:IsPremium>false</gsak:IsPremium>
+            <gsak:FavPoints>43</gsak:FavPoints>
+            <gsak:GcNote>Traveller (aallonmurtajalla):  "jaa että kassakaappikeikka  - voit koettaa yhdistelmää b: 6 9 21 10 10 8 11 9 8 10  mut et pärjää ilman experttiä - johnny ramensky"</gsak:GcNote>
+        </gsak:wptExtension>
+    </wpt>
+</gpx>

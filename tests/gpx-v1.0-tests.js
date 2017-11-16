@@ -157,13 +157,13 @@ module.exports = {
 
             test.equal(error, null);
             test.equal(result.metadata.creator, "c:geo - http://www.cgeo.org/");
-            test.equal(result.waypoints.length, 8);
-            test.equal(result.waypoints[0].lat, 60.193167);
-            test.equal(result.waypoints[1].lon, 24.768717);
-            test.equal(result.waypoints[0].name, 'GC6N82C');
-            test.equal(result.waypoints[0].type, 'Geocache|Multi-cache');
-            test.equal(result.waypoints[0].cacheId, '5763379');
-            test.equal(result.waypoints[0].cacheType, 'Multi-cache');
+            test.equal(result.waypoints.length, 4);
+            test.equal(result.waypoints[0].lat, 60.158017);
+            test.equal(result.waypoints[1].lon, 24.787233);
+            test.equal(result.waypoints[0].name, 'GC1WA7Z');
+            test.equal(result.waypoints[0].type, 'Geocache|Traditional Cache');
+            test.equal(result.waypoints[0].cacheId, '1326615');
+            test.equal(result.waypoints[0].cacheType, 'Traditional Cache');
             test.equal(result.routes.length, 0);
             test.equal(result.tracks.length, 0);
             test.done();
