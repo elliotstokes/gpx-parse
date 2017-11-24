@@ -22,6 +22,23 @@ var gpxParse = require("../"),
     '</trkpt>',
     '<trkpt lat="47.644548" lon="-122.326897">',
     '<ele>4.94</ele>',
+    '<src>thesource</src>',
+    '<magvar>33.324</magvar>',
+    '<geoidheight>11.1</geoidheight>',
+    '<name>5066</name>',
+    '<desc><![CDATA[5066]]></desc>',
+    '<sym>Crossing</sym>',
+    '<cmt>le comment</cmt>',
+    '<link href="google.com"><text>google</text><type>text\/html</type></link>',
+    '<link href="cnn.com"><text>cnn</text></link>',
+    '<type><![CDATA[Crossing]]></type>',
+    '<type><![CDATA[Crossing]]></type>',
+    '<sat>4</sat>',
+    '<hdop>0.9</hdop>',
+    '<vdop>0.04</vdop>',
+    '<pdop>0.3210</pdop>',
+    '<ageofdgpsdata>744.6</ageofdgpsdata>',
+    '<dgpsid>13</dgpsid>',
     '<time>2009-10-17T18:37:31Z</time>',
     '</trkpt>',
     '<trkpt lat="47.644548" lon="-122.326897">',
@@ -56,6 +73,24 @@ module.exports = {
       test.equal(result.tracks[0].name, 'Example GPX Document');
       test.equal(result.tracks[0].segments[0][0].time, new Date('2009-10-17T18:37:26Z').toString());
       test.equal(result.tracks[0].segments[0][0].elevation, 4.46);
+      test.equal(result.tracks[0].segments[0][1].name, "5066");
+      test.equal(result.tracks[0].segments[0][1].links.length, 2);
+      test.equal(result.tracks[0].segments[0][1].links[0].href, "google.com");
+      test.equal(result.tracks[0].segments[0][1].links[0].text, "google");
+      test.equal(result.tracks[0].segments[0][1].links[0].type, "text/html");
+      test.equal(result.tracks[0].segments[0][1].links[1].href, "cnn.com");
+      test.equal(result.tracks[0].segments[0][1].links[1].type, "");
+      test.equal(result.tracks[0].segments[0][1].cmt, "le comment");
+      test.equal(result.tracks[0].segments[0][1].sym, "Crossing");
+      test.equal(result.tracks[0].segments[0][1].fixType, null);
+      test.equal(result.tracks[0].segments[0][1].sat, 4);
+      test.equal(result.tracks[0].segments[0][1].hdop, 0.9);
+      test.equal(result.tracks[0].segments[0][1].src, "thesource");
+      test.equal(result.tracks[0].segments[0][1].vdop, 0.04);
+      test.equal(result.tracks[0].segments[0][1].pdop, 0.3210);
+      test.equal(result.tracks[0].segments[0][1].ageofdgpsdata, 744.6);
+      test.equal(result.tracks[0].segments[0][1].dgpsid, 13);
+      test.equal(result.tracks[0].segments[0][1].description, "5066");
       test.done();
     });
 

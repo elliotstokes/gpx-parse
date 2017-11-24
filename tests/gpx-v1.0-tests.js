@@ -128,22 +128,51 @@ module.exports = {
         '<bounds minlat="42.401051" minlon="-71.126602" maxlat="42.468655" maxlon="-71.102973"/>',
         '<wpt lat="42.438878" lon="-71.119277">',
         '<ele>44.586548</ele>',
+        '<src>thesource</src>',
         '<time>2001-11-28T21:05:28Z</time>',
+        '<magvar>33.324</magvar>',
+        '<geoidheight>11.1</geoidheight>',
         '<name>5066</name>',
         '<desc><![CDATA[5066]]></desc>',
         '<sym>Crossing</sym>',
+        '<cmt>le comment</cmt>',
+        '<link href="google.com"><text>google</text><type>text\/html</type></link>',
+        '<link href="cnn.com"><text>cnn</text></link>',
         '<type><![CDATA[Crossing]]></type>',
+        '<type><![CDATA[Crossing]]></type>',
+        '<sat>4</sat>',
+        '<hdop>0.9</hdop>',
+        '<vdop>0.04</vdop>',
+        '<pdop>0.3210</pdop>',
+        '<ageofdgpsdata>744.6</ageofdgpsdata>',
+        '<dgpsid>13</dgpsid>',
         '</wpt>',
         '</gpx>'].join('');
 
         gpxParse.parseGpx(wayPointGpx, function(err, result) {
-            
             test.equal(err, null);
             test.equal(result.tracks.length, 0);
             test.equal(result.routes.length, 0);
             test.equal(result.waypoints.length, 1);
             test.equal(result.waypoints[0].name, "5066");
+            test.equal(result.waypoints[0].links.length, 2);
+            test.equal(result.waypoints[0].links[0].href, "google.com");
+            test.equal(result.waypoints[0].links[0].text, "google");
+            test.equal(result.waypoints[0].links[0].type, "text/html");
+            test.equal(result.waypoints[0].links[1].href, "cnn.com");
+            test.equal(result.waypoints[0].links[1].type, "");
+            test.equal(result.waypoints[0].cmt, "le comment");
+            test.equal(result.waypoints[0].sym, "Crossing");
+            test.equal(result.waypoints[0].fixType, null);
+            test.equal(result.waypoints[0].sat, 4);
+            test.equal(result.waypoints[0].hdop, 0.9);
+            test.equal(result.waypoints[0].src, "thesource");
+            test.equal(result.waypoints[0].vdop, 0.04);
+            test.equal(result.waypoints[0].pdop, 0.3210);
+            test.equal(result.waypoints[0].ageofdgpsdata, 744.6);
+            test.equal(result.waypoints[0].dgpsid, 13);
+            test.equal(result.waypoints[0].description, "5066");
             test.done();
-        });        
+        });
     }
 };

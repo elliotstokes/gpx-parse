@@ -56,7 +56,7 @@ module.exports = {
     },
 
     "Test that the gpxWaypoint can be initialized": function(test) {
-        var gpxPoint = new GpxWaypoint(1, 2, 3, "2002-02-27T17:18:33Z",1,1,"name","cmt", "description");
+        var gpxPoint = new GpxWaypoint(1, 2, 3, "2002-02-27T17:18:33Z",1,1,"name","cmt","description","src",[{$:{href:'test.com'},text:['text'],type:['text/html']}], "sym", "type", "fixType", 4, 0.5, 0.4, 0.02, 35788.7, 13);
         test.equal(gpxPoint.lat, 1);
         test.equal(gpxPoint.lon, 2);
         test.equal(gpxPoint.elevation, 3);
@@ -64,6 +64,19 @@ module.exports = {
         test.equal(gpxPoint.name, "name");
         test.equal(gpxPoint.cmt, "cmt");
         test.equal(gpxPoint.description, "description");
+        test.equal(gpxPoint.src, "src");
+        test.equal(gpxPoint.links[0].href, "test.com");
+        test.equal(gpxPoint.links[0].text, "text");
+        test.equal(gpxPoint.links[0].type, "text/html");
+        test.equal(gpxPoint.sym, "sym");
+        test.equal(gpxPoint.type, "type");
+        test.equal(gpxPoint.fixType, "fixType");
+        test.equal(gpxPoint.sat, 4);
+        test.equal(gpxPoint.hdop, 0.5);
+        test.equal(gpxPoint.vdop, 0.4);
+        test.equal(gpxPoint.pdop, 0.02);
+        test.equal(gpxPoint.ageofdgpsdata, 35788.7);
+        test.equal(gpxPoint.dgpsid, 13);
         test.done();
     },
 
