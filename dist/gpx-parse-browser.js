@@ -89,7 +89,6 @@ var assert = require("assert"),
     GpxRoute = require('./gpxRoute'),
     geomUtils = require('./geomUtils');
 
-
 /**
  * Parses the waypoints into an array of waypoints.
  * @param {Array<Object>} gpxWaypoints - The array of points from the xml
@@ -98,8 +97,45 @@ var _getWayPoints = function(gpxWaypoints) {
 	var waypoints = [];
 	if (gpxWaypoints && gpxWaypoints.length) {
 		gpxWaypoints.forEach(function(wayPoint) {
-      var point = new GpxWaypoint(wayPoint.$.lat, wayPoint.$.lon, getFloat(wayPoint.ele), wayPoint.time, null, null, getString(wayPoint.name), null, getString(wayPoint.desc), null, null, wayPoint.sym, wayPoint.type, wayPoint.url, wayPoint.urlname);
+      var point = new GpxWaypoint(wayPoint.$.lat, wayPoint.$.lon, getFloat(wayPoint.ele), wayPoint.time, null, null, getString(wayPoint.name), null, getString(wayPoint.desc));
       waypoints.push(point);
+    });
+	}
+	return waypoints;
+};
+
+
+/**
+ * Parses the waypoints into an array of waypoints.
+ * @param {Array<Object>} gpxWaypoints - The array of points from the xml
+ */
+var _getExtendedWayPoints = function(gpxWaypoints) {
+	var waypoints = [];
+	if (gpxWaypoints && gpxWaypoints.length) {
+		gpxWaypoints.forEach(function(wayPoint) {
+      if( typeof wayPoint["groundspeak:cache"] !== "undefined" ) {
+        var cache = wayPoint["groundspeak:cache"][0];
+        var point = new GpxWaypoint( wayPoint.$.lat, wayPoint.$.lon, getFloat(wayPoint.ele), wayPoint.time, null, null, getString(wayPoint.name), null, 
+                    getString(wayPoint.desc), null, null, getString(wayPoint.sym), getString(wayPoint.type), getString(wayPoint.url), getString(wayPoint.urlname), 
+                    cache.$.id, cache.$.available, cache.$.archived, 
+                    getString(cache["groundspeak:name"]), getString(cache["groundspeak:placed_by"]), getString(cache["groundspeak:owner"]), 
+                    getString(cache["groundspeak:type"]), getString(cache["groundspeak:container"]), getString(cache["groundspeak:country"]) 
+                    );
+          waypoints.push(point);
+      } else {
+        var point = new GpxWaypoint(
+          wayPoint.$.lat, wayPoint.$.lon,
+          getFloat(wayPoint.ele), wayPoint.time, 
+          null, null,
+          getString(wayPoint.name), null, 
+          getString(wayPoint.desc), null,
+          null, getString(wayPoint.sym), 
+          getString(wayPoint.type), getString(wayPoint.url), 
+          getString(wayPoint.urlname)
+        );
+        waypoints.push(point);
+        
+      }          
     });
 	}
 
@@ -151,6 +187,18 @@ var getString = function(item) {
 };
 
 /**
+ * Gets a float from an element
+var getCache = function(item) {
+  var value = null;
+  if (item && Array.isArray(item) && item.length > 0) {
+    value = (item[0]);
+  }
+  return value;
+};
+ **/
+
+
+/**
  * Grabs any tracks contained within the gpx
  * @params {Object} gpxTracks - THe gpcx tracks from the file
  **/
@@ -185,21 +233,24 @@ var _getTracks = function(gpxTracks) {
  * Parses v1.0 data into data structure
  */
 var _ParseV10 = function(gpx) {
-
+  
 	var extent = null,
 		metadata = null;
 
 	extent = new GpxExtent();
-	metadata = new GpxMetaData(gpx.$.creator, gpx.time, extent);
-
-	return new GpxResult(metadata, _getWayPoints(gpx.wpt), _getRoutes(gpx.rte), _getTracks(gpx.trk));
+  metadata = new GpxMetaData(gpx.$.creator, gpx.time, extent);
+  if(metadata.creator == 'c:geo - http://www.cgeo.org/') {
+    return new GpxResult(metadata, _getExtendedWayPoints(gpx.wpt), [], [] );    
+  } else {
+    return new GpxResult(metadata, _getWayPoints(gpx.wpt), _getRoutes(gpx.rte), _getTracks(gpx.trk));
+  }
 };
 
 /**
  * Parses v1.1 data into data structure
  */
 var _ParseV11 = function(gpx) {
-	var metadata;
+  var metadata;
   
 	if (gpx.metadata && gpx.metadata.length > 0) {
 		metadata = new GpxMetaData(gpx.$.creator, getString(gpx.metadata[0].time));
@@ -585,8 +636,10 @@ module.exports = GpxTrack;
  * @param {string} type The type of waypoint.
  * @param {string} url An url of the waypoint.
  * @param {string} urlname The name of url of the waypoint.
+ * @param {string} cache The cache (groundspeak extension).
  **/
-function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, desc, src, links, sym, type, url, urlname) {
+function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, desc, src, links, sym, type, url, urlname, 
+					cacheId, cacheAvailable, cacheArchived, cacheName, cachePlacedBy, cacheOwner, cacheType, cacheContainer, cacheCountry) {
 	lat = parseFloat(lat) || -1;
 	lon = parseFloat(lon) || -1;
 	elevation = elevation || -1;
@@ -598,6 +651,15 @@ function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, 
 	type = type || "";
 	url = url || "";
 	urlname = urlname || "";
+	cacheId = cacheId || "";
+	cacheAvailable = cacheAvailable || "";
+	cacheArchived = cacheArchived || "";
+	cacheName = cacheName || "";
+	cachePlacedBy = cachePlacedBy || "";
+	cacheOwner = cacheOwner || "";
+	cacheType = cacheType || "";
+	cacheContainer = cacheContainer || "";
+	cacheCountry = cacheCountry || "";
 	
 	/**
 	* Latitude of the Waypoint
@@ -709,9 +771,97 @@ function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, 
 		return urlname;
 	});
 
-
-
-
+	/**
+	* cacheId of the Waypoint
+	* @name cacheId
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheId", function() {
+		return cacheId;
+	});
+		
+	/**
+	* groundspeak extension cacheAvailable of the Waypoint
+	* @name cacheAvailable
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheAvailable", function() {
+		return cacheAvailable;
+	});
+	/**
+	* groundspeak extension cacheArchived of the Waypoint
+	* @name cacheArchived
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheArchived", function() {
+		return cacheArchived;
+	});
+	/**
+	* groundspeak extension cacheName of the Waypoint
+	* @name cacheName
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheName", function() {
+		return cacheName;
+	});
+	/**
+	* groundspeak extension cachePlacedBy of the Waypoint
+	* @name cachePlacedBy
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cachePlacedBy", function() {
+		return cachePlacedBy;
+	});
+	/**
+	* groundspeak extension cacheOwner of the Waypoint
+	* @name cacheOwner
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheOwner", function() {
+		return cacheOwner;
+	});
+	/**
+	* groundspeak extension cacheType of the Waypoint
+	* @name cacheType
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheType", function() {
+		return cacheType;
+	});
+	/**
+	* groundspeak extension cacheContainer of the Waypoint
+	* @name cacheContainer
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheContainer", function() {
+		return cacheContainer;
+	});
+	/**
+	* groundspeak extension cacheCountry of the Waypoint
+	* @name cacheCountry
+	* @memberOf GpxWaypoint
+	* @instance
+	* @type {string}
+	**/
+	this.__defineGetter__("cacheCountry", function() {
+		return cacheCountry;
+	});
 
 }
 
