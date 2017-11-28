@@ -31,7 +31,7 @@
     "st": "^1.2.0"
   },
   "scripts": {
-    "preinstall": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests && node_modules/.bin/grunt browserify"
+    "preinstall": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests && node_modules/.bin/grunt browserify",
     "test": "node_modules/.bin/nodeunit tests/",
     "integration": "node_modules/.bin/nodeunit tests/integration/",
     "lcov": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests",
