@@ -113,15 +113,22 @@ var _getExtendedWayPoints = function(gpxWaypoints) {
 		gpxWaypoints.forEach(function(wayPoint) {
       if( typeof wayPoint["groundspeak:cache"] !== "undefined" ) {
         var cache = wayPoint["groundspeak:cache"][0];
-        var point = new GpxWaypoint( wayPoint.$.lat, wayPoint.$.lon, getFloat(wayPoint.ele), wayPoint.time, null, null, getString(wayPoint.name), null, 
-                    getString(wayPoint.desc), null, null, getString(wayPoint.sym), getString(wayPoint.type), getString(wayPoint.url), getString(wayPoint.urlname), 
-                    cache.$.id, cache.$.available, cache.$.archived, 
-                    getString(cache["groundspeak:name"]), getString(cache["groundspeak:placed_by"]), getString(cache["groundspeak:owner"]), 
-                    getString(cache["groundspeak:type"]), getString(cache["groundspeak:container"]), getString(cache["groundspeak:country"]),
-                    false 
+        var point = new GpxWaypoint( 
+              wayPoint.$.lat, wayPoint.$.lon, 
+              getFloat(wayPoint.ele), wayPoint.time, 
+              null, null, 
+              getString(wayPoint.name), null, 
+              getString(wayPoint.desc), null, 
+              null, getString(wayPoint.sym), 
+              getString(wayPoint.type), getString(wayPoint.url), 
+              getString(wayPoint.urlname), cache.$.id, 
+              cache.$.available, cache.$.archived, 
+              getString(cache["groundspeak:name"]), getString(cache["groundspeak:placed_by"]), 
+              getString(cache["groundspeak:owner"]), getString(cache["groundspeak:type"]), 
+              getString(cache["groundspeak:container"]), getString(cache["groundspeak:country"]),
+              "false" 
                     );
           waypoints.push(point);
-          console.log("Creating wp1", point);        
       } else {
         var point = new GpxWaypoint(
           wayPoint.$.lat, wayPoint.$.lon,
@@ -131,9 +138,13 @@ var _getExtendedWayPoints = function(gpxWaypoints) {
           getString(wayPoint.desc), null,
           null, getString(wayPoint.sym), 
           getString(wayPoint.type), getString(wayPoint.url), 
-          getString(wayPoint.urlname), null, null , null, null, null, null, null, null, null, true
+          getString(wayPoint.urlname), null, 
+          null , null, 
+          null, null, 
+          null, null, 
+          null, null, 
+          "true"
         );
-        console.log("Creating wp2", point);        
         waypoints.push(point);
         
       }          
@@ -641,8 +652,13 @@ module.exports = GpxTrack;
  * @param {boolean} extraWp T if additional wp (not cache).
  * 
  **/
-function GpxWaypoint(lat, lon, elevation, time, magvar, geoidheight, name, cmt, desc, src, links, sym, type, url, urlname, 
-					cacheId, cacheAvailable, cacheArchived, cacheName, cachePlacedBy, cacheOwner, cacheType, cacheContainer, cacheCountry, extraWp) {
+function GpxWaypoint(lat, lon, elevation, time, 
+					 magvar, geoidheight, name, cmt, 
+					 desc, src, links, sym, 
+					 type, url, urlname, cacheId, 
+					 cacheAvailable, cacheArchived, cacheName, cachePlacedBy, 
+					 cacheOwner, cacheType, cacheContainer, cacheCountry, 
+					 extraWp) {
 	lat = parseFloat(lat) || -1;
 	lon = parseFloat(lon) || -1;
 	elevation = elevation || -1;
