@@ -683,7 +683,7 @@ function GpxWaypoint(lat, lon, elevation, time,
 	cacheType = cacheType || null;
 	cacheContainer = cacheContainer || null;
 	cacheCountry = cacheCountry || null;
-	extraWp = extraWp || true;
+	extraWp = extraWp || "true";
 	
 	/**
 	* Latitude of the Waypoint
