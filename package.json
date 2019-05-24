@@ -1,5 +1,5 @@
 {
-  "name": "gpx-parse",
+  "name": "@sportheroes/bk-gpx-parse",
   "author": "Elliot Stokes",
   "description": "a GPX parser for Node and client-side JavaScript.",
   "version": "0.10.4",
@@ -18,7 +18,9 @@
     "url": "https://github.com/elliotstokes/gpx-parse.git"
   },
   "devDependencies": {
+    "@sportheroes/bk-standard-version": "5.0.0",
     "browserify": "~13.2.0",
+    "config": "3.1.0",
     "coveralls": "*",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
@@ -31,13 +33,15 @@
     "st": "^1.2.0"
   },
   "scripts": {
+    "release": "bk-standard-version",
+    "release-major": "bk-standard-version -- --release-as major",
     "test": "node_modules/.bin/nodeunit tests/",
     "integration": "node_modules/.bin/nodeunit tests/integration/",
     "coveralls": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests | coveralls",
     "lcov": "jscoverage lib && GPXPARSE_COV=1 nodeunit --reporter=lcov tests",
     "browserify": "node_modules/.bin/grunt browserify"
   },
-  "browserify":{
+  "browserify": {
     "./lib-cov/gpx-parse.js": false
   }
 }
