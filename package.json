@@ -18,7 +18,7 @@
     "url": "https://github.com/elliotstokes/gpx-parse.git"
   },
   "devDependencies": {
-    "browserify": "~13.2.0",
+    "browserify": "~16.4.0",
     "coveralls": "*",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
