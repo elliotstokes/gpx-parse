@@ -28,7 +28,7 @@
     "nodeunit": "*",
     "sandboxed-module": "*",
     "server-destroy": "^1.0.0",
-    "st": "^1.2.0"
+    "st": "^2.0.0"
   },
   "scripts": {
     "test": "node_modules/.bin/nodeunit tests/",
